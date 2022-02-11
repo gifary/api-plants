@@ -52,7 +52,7 @@ class PlantRequest extends FormRequest
         $plan->watering_instructions = $this->watering_instructions;
 
         if ($this->hasFile('image')) {
-            $plan->image = $this->file('image')->storePublicly('plant');
+            $plan->image = $this->file('image')->store('plant','public');
         }
 
         $plan->save();

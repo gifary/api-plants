@@ -29,7 +29,7 @@ trait SanitizesInput
 
             foreach ($sanitizers as $sanitizer) {
                 $this->merge([
-                    $field = (new $sanitizer)->run($this->{$field})
+                    $field => (new $sanitizer)->run($this->{$field})
                 ]);
             }
         }
